@@ -4,20 +4,16 @@
 
 [sub_resource type="Theme" id="Theme_pae2f"]
 
-[node name="ArraySelect" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 131.0
+offset_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="ItemList" type="ItemList" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_right = 168.0
-offset_bottom = 72.0
+layout_mode = 2
 theme = SubResource("Theme_pae2f")
+auto_height = true
 item_count = 2
 fixed_icon_size = Vector2i(16, 16)
 item_0/text = "first option"

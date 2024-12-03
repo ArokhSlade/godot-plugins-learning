@@ -21,7 +21,8 @@ func _parse_property(object, type, name, hint_type, hint_string, usage_flags, wi
 	if type == TYPE_ARRAY:
 		print("found array")
 		#add_property_editor(name, preload("res://addons/array_selection_inspector_plugin/array_select.tscn").instantiate())
-		add_property_editor(name, preload("res://addons/array_selection_inspector_plugin/array_select_gui.gd").new())
+		array_property = array_property_resource.new()
+		add_property_editor(name, array_property)
 		return true
 		
 		
