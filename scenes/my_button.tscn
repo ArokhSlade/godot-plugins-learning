@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://brc1ghkntq2k3"]
+
+[ext_resource type="Script" path="res://addons/my_custom_node/my_button.gd" id="1_hav4i"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MyButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_hav4i")

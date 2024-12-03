@@ -1,0 +1,10 @@
+how do i identify a property as being of the "entity_selection_array" category?
+or even "array to select anything from" category?
+maybe make the property a custom type?
+
+{ "name": "unique_name_in_owner"
+ "class_name": &""
+ "type": 1
+ "hint": 0
+ "hint_string": ""
+ "usage": 2
