@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlvicit58atuj"]
+[gd_scene load_steps=4 format=3 uid="uid://dlvicit58atuj"]
 
 [ext_resource type="Script" path="res://scripts/scene_with_array_selection.gd" id="1_375kx"]
+[ext_resource type="PackedScene" uid="uid://cyaspjhfr7she" path="res://scenes/selectable_options/first_option.tscn" id="2_n78x3"]
+[ext_resource type="PackedScene" uid="uid://c35xbpfuse50x" path="res://scenes/selectable_options/second_option.tscn" id="3_tdoim"]
 
 [node name="SceneWithArraySelection" type="Node2D"]
 script = ExtResource("1_375kx")
+all_the_options = Array[PackedScene]([ExtResource("2_n78x3"), ExtResource("3_tdoim"), ExtResource("3_tdoim")])
+choice_ = 1
+xd = 13
+choice = 1
+xd = 13
