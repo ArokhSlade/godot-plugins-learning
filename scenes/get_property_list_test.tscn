@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5p8qghitc6nj"]
+
+[ext_resource type="Script" path="res://scripts/get_property_list_test.gd" id="1_kplmd"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_kplmd")
+number_0 = 0
+number_1 = 0
+number_2 = 0

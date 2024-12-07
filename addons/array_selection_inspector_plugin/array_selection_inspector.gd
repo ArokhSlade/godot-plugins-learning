@@ -5,6 +5,7 @@ extends EditorInspectorPlugin
 var array_property_resource = preload("res://addons/array_selection_inspector_plugin/array_selection_property.gd")
 var array_property
 
+@export var options_dictionary : Resource
 
 func _can_handle(object : Object):
 	var class_ = object.get_class()

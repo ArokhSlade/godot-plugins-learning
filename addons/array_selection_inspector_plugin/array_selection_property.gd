@@ -7,7 +7,6 @@ func _init():
 
 func _ready():
 	var control = gui_scene.instantiate()
-	#var control = Button.new()
 	get_parent_control().add_child(control)
 	add_focusable(control)
 	var parent = get_parent()

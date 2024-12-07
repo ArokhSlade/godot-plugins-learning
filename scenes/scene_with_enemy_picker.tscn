@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlqanuiij33ho"]
+
+[ext_resource type="Script" path="res://scripts/scene_with_enemy_picker.gd" id="1_xwftm"]
+
+[node name="SceneWithEnemyPicker" type="Node"]
+script = ExtResource("1_xwftm")
+my_enemy = 11
+my_enemy = 11

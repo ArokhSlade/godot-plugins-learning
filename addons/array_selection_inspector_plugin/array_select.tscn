@@ -1,22 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://docrcffh84r3v"]
+[gd_scene load_steps=2 format=3 uid="uid://docrcffh84r3v"]
 
-[ext_resource type="Texture2D" uid="uid://cx5xwts34plh1" path="res://icon.svg" id="2_rsv6s"]
+[ext_resource type="Script" path="res://addons/array_selection_inspector_plugin/array_select.gd" id="1_r3uco"]
 
-[sub_resource type="Theme" id="Theme_pae2f"]
-
-[node name="VBoxContainer" type="VBoxContainer"]
+[node name="OptionButton" type="OptionButton"]
 offset_right = 131.0
-offset_bottom = 64.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ItemList" type="ItemList" parent="."]
-layout_mode = 2
-theme = SubResource("Theme_pae2f")
-auto_height = true
-item_count = 2
-fixed_icon_size = Vector2i(16, 16)
-item_0/text = "first option"
-item_0/icon = ExtResource("2_rsv6s")
-item_1/text = "second option"
-item_1/icon = ExtResource("2_rsv6s")
+offset_bottom = 20.0
+allow_reselect = true
+script = ExtResource("1_r3uco")
