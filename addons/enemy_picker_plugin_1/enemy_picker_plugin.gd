@@ -6,7 +6,7 @@ var plugin_instance
 var ui_instance = preload("res://addons/enemy_picker_plugin_1/enemy_picker_ui.tscn").instantiate()
 
 func _enable_plugin():
-	add_autoload_singleton("GlobalEnemyList", "res://addons/enemy_picker_plugin_1/enemy_list.tscn")
+	add_autoload_singleton("GlobalEnemyList", "res://addons/enemy_picker_plugin_1/global_enemy_list.tscn")
 
 func _disable_plugin():
 	remove_autoload_singleton("GlobalEnemyList")

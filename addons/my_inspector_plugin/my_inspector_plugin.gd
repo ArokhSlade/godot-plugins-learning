@@ -13,6 +13,7 @@ func _parse_property(object, type, name, hint_type, hint_string, usage_flags, wi
 		
 	if type == TYPE_INT:
 		print("name : " + name)
+		print("add prop ed...")
 		add_property_editor(name, RandomIntEditor.new(),false, name)
 		return true
 	else :

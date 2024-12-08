@@ -9,9 +9,13 @@ func _can_handle(object : Object):
 	
 func _parse_property(object, type, name, hint_type, hint_string, usage_flags, wide):
 	if type == TYPE_OBJECT && hint_string == "EnemyChoice":
-		print(hint_string + " parsed: " + name)
-		property_instance = enemy_picker_property.new()
+		var property = object.get(name)
+		print ("object: ", object)		
+		print("property: ", property)
+		
+		property_instance = enemy_picker_property.new(property)
 		add_property_editor(name, property_instance)
+		
 		#print_stuff(object, type, name, hint_type, hint_string, usage_flags, wide)
 		#print_properties(object)
 		return true

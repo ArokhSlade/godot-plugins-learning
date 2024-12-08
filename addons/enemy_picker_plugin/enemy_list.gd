@@ -1,5 +1,5 @@
 @tool
-class_name EnemyList
+#class_name EnemyList
 extends Node2D
 
 const values = ["no_enemy", "enemy_one", "enemy_two", "enemy_three"]

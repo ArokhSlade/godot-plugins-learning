@@ -2,4 +2,8 @@
 class_name EnemyChoice
 extends Node2D
 
-var enemy_scene : PackedScene
+var enemy_scene : PackedScene # refers to an element of global enemy list
+var scene_index : int # index of scene in global enemy list
+
+func print():
+	print(self, " : ", enemy_scene, " : ", scene_index)

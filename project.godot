@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEnemyList="*res://addons/enemy_picker_plugin_1/enemy_list.tscn"
+GlobalEnemyList="*res://addons/enemy_picker_plugin_1/global_enemy_list.tscn"
 
 [editor_plugins]
 
