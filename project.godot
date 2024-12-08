@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEnemyList="*res://scenes/enemy_list.tscn"
+GlobalEnemyList="*res://addons/enemy_picker_plugin_1/enemy_list.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/enemy_picker_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/enemy_picker_plugin_1/plugin.cfg")
 
 [rendering]
 

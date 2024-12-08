@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://casc6la3wcsjn"]
+
+[ext_resource type="Script" path="res://scripts/scene_with_enemy_picker_1.gd" id="1_de6l1"]
+[ext_resource type="PackedScene" uid="uid://bvptcqc86r2o1" path="res://addons/enemy_picker_plugin_1/enemy_2.tscn" id="2_1nqo6"]
+
+[node name="SceneWithEnemyPicker_1" type="Node" node_paths=PackedStringArray("enemy")]
+script = ExtResource("1_de6l1")
+enemy = NodePath("")
+enemy_scene = ExtResource("2_1nqo6")

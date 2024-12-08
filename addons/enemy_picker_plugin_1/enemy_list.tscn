@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp3sn7bq3t3c6"]
+
+[ext_resource type="Script" path="res://addons/enemy_picker_plugin_1/enemy_list.gd" id="1_ulvje"]
+[ext_resource type="PackedScene" uid="uid://ei4hclcgc8sc" path="res://addons/enemy_picker_plugin_1/enemy_1.tscn" id="2_vc740"]
+[ext_resource type="PackedScene" uid="uid://bvptcqc86r2o1" path="res://addons/enemy_picker_plugin_1/enemy_2.tscn" id="3_ulwkx"]
+[ext_resource type="PackedScene" uid="uid://ctl3dqaui4kkm" path="res://addons/enemy_picker_plugin_1/enemy_3.tscn" id="4_nk7w2"]
+
+[node name="enemy_list" type="Node2D"]
+script = ExtResource("1_ulvje")
+entities = Array[PackedScene]([null, ExtResource("2_vc740"), ExtResource("3_ulwkx"), ExtResource("4_nk7w2")])

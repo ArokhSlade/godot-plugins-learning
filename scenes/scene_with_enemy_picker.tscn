@@ -4,5 +4,5 @@
 
 [node name="SceneWithEnemyPicker" type="Node"]
 script = ExtResource("1_xwftm")
-my_enemy = 11
-my_enemy = 11
+my_enemy = 22
+my_enemy1 = null
