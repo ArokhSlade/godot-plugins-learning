@@ -16,9 +16,6 @@ extends Node
 				#enemy.enemy_scene = value #this won't update. we're supposed to call notify_property_list_changed, but that makes things worse...
 				#notify_property_list_changed() #NOTE(ArokhSlade,2024 12 08): if I do this, the property ui will be re-initialized, resetting the drop-down menu and thus undoing the user's selection
 	
-func _ready():
-	enemy = EnemyChoice.new()
-#
 func _get_property_list():
 	return([{
 		"name" : "enemy_scene",

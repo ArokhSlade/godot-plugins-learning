@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://casc6la3wcsjn"]
+[gd_scene load_steps=5 format=3 uid="uid://casc6la3wcsjn"]
 
 [ext_resource type="Script" path="res://scripts/scene_with_enemy_picker_1.gd" id="1_de6l1"]
+[ext_resource type="PackedScene" uid="uid://ei4hclcgc8sc" path="res://addons/enemy_picker_plugin_1/enemies/blue_enemy.tscn" id="3_g67im"]
+[ext_resource type="Script" path="res://addons/enemy_picker_plugin_1/enemy_choice.gd" id="5_ppgch"]
 
-[node name="SceneWithEnemyPicker_1" type="Node" node_paths=PackedStringArray("enemy")]
+[sub_resource type="Resource" id="Resource_gtjvn"]
+script = ExtResource("5_ppgch")
+
+[node name="SceneWithEnemyPicker_1" type="Node"]
 script = ExtResource("1_de6l1")
-enemy = NodePath("")
-enemy_scene = null
+enemy = SubResource("Resource_gtjvn")
+enemy_scene = ExtResource("3_g67im")

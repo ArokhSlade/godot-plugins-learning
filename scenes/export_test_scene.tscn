@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuinc5jnq7o3o"]
+
+[ext_resource type="Script" path="res://scripts/scene_with_enemy_picker_1.gd" id="1_j3j3l"]
+[ext_resource type="PackedScene" uid="uid://bx86gcq6g4wke" path="res://scenes/my_2d_scene.tscn" id="2_ujm2w"]
+[ext_resource type="Texture2D" uid="uid://ctxpmsv42lacb" path="res://icon.svg" id="3_h2mam"]
+[ext_resource type="Script" path="res://addons/enemy_picker_plugin_1/enemy_choice.gd" id="4_nlyfm"]
+
+[node name="SceneWithEnemyPicker_1" type="Node" node_paths=PackedStringArray("some_sprite")]
+script = ExtResource("1_j3j3l")
+some_int = 9
+some_resource = ExtResource("2_ujm2w")
+some_sprite = NodePath("Sprite2D")
+some_texture = ExtResource("3_h2mam")
+enemy_scene = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_h2mam")
+
+[node name="EnemyChoice" type="Node2D" parent="."]
+script = ExtResource("4_nlyfm")

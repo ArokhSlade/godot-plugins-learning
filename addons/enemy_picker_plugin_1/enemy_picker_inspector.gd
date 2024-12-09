@@ -18,7 +18,8 @@ func _parse_property(object, type, name, hint_type, hint_string, usage_flags, wi
 		
 		#print_stuff(object, type, name, hint_type, hint_string, usage_flags, wide)
 		#print_properties(object)
-		return true
+		return true #return false / nothing to let godot show default ui in addition to ours
+		
 		
 func print_properties(object : Object):
 	for property in object.get_property_list():
