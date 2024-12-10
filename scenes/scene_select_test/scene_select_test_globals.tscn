@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://byocblv7kvrdt"]
+
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test_globals.gd" id="1_bjvxh"]
+[ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/gd1.tscn" id="2_nhw5y"]
+[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/gd2.tscn" id="3_b4hsh"]
+[ext_resource type="PackedScene" uid="uid://cw46il6cl8tnj" path="res://scenes/scene_select_test/gd3.tscn" id="4_205gt"]
+
+[node name="SceneSelectTest_Globals" type="Node"]
+script = ExtResource("1_bjvxh")
+scenes = Array[PackedScene]([ExtResource("2_nhw5y"), ExtResource("3_b4hsh"), ExtResource("4_205gt")])

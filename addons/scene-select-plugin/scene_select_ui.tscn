@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0yccp047uk0f"]
 
-[ext_resource type="Script" path="res://addons/enemy_picker_plugin_1/enemy_picker_ui.gd" id="1_fpmo1"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select_ui.gd" id="1_rccwt"]
 
-[node name="EnemyPickerUI" type="VBoxContainer"]
+[node name="SceneSelectUI" type="VBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_fpmo1")
+script = ExtResource("1_rccwt")
 
 [node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 2

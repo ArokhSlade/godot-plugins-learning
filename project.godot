@@ -16,7 +16,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEnemyList="*res://addons/enemy_picker_plugin_1/global_enemy_list.tscn"
+GlobalEnemyList="*res://addons/scene-select-plugin/global_enemy_list.tscn"
+SceneSelectTestGlobals="*res://scenes/scene_select_test/scene_select_test_globals.tscn"
 
 [editor_plugins]
 

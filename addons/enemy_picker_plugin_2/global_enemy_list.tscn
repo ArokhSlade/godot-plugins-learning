@@ -1,0 +1,11 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxts7r7reifqy"]
+
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_list.gd" id="1_s7eva"]
+[ext_resource type="PackedScene" uid="uid://ei4hclcgc8sc" path="res://addons/scene-select-plugin/enemies/blue_enemy.tscn" id="2_rmq4e"]
+[ext_resource type="PackedScene" uid="uid://ctl3dqaui4kkm" path="res://addons/scene-select-plugin/enemies/green_enemy.tscn" id="3_mb3vh"]
+[ext_resource type="PackedScene" uid="uid://bvptcqc86r2o1" path="res://addons/scene-select-plugin/enemies/red_enemy.tscn" id="4_03ppd"]
+
+[node name="GlobalEnemyList" type="Node2D"]
+script = ExtResource("1_s7eva")
+entities = Array[PackedScene]([null, ExtResource("2_rmq4e"), ExtResource("3_mb3vh"), ExtResource("4_03ppd")])
+enemy_names = Array[String](["<null>", "enemy_1", "enemy_2", "enemy_3"])

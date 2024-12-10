@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca48o0qoqgrct"]
+
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_ulh0s"]
+
+[node name="SceneSelectTest" type="Node2D"]
+script = ExtResource("1_ulh0s")
