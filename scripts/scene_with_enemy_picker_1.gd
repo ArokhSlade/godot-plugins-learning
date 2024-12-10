@@ -1,5 +1,6 @@
 @tool
-extends Node
+extends Node2D
+
 
 @export var enemy : EnemyChoice :
 	set(value):		
