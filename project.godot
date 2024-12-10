@@ -21,7 +21,7 @@ SceneSelectTestGlobals="*res://scenes/scene_select_test/scene_select_test_global
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/enemy_picker_plugin_1/plugin.cfg")
+enabled=PackedStringArray("res://addons/scene-select-plugin/plugin.cfg")
 
 [rendering]
 

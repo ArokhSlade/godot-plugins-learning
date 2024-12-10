@@ -1,7 +1,6 @@
 @tool
 class_name SceneList
-extends Node
-
+extends Resource
 
 @export var scenes : Array[PackedScene] :
 	set(value):

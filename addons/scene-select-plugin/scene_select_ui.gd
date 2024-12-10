@@ -1,6 +1,13 @@
 @tool
 extends VBoxContainer
+class_name SceneSelectUI
 
+var res_pick : SceneListResourcePicker
+
+func _init():
+	res_pick = SceneListResourcePicker.new()
+	res_pick.base_type = "SceneList"
+	add_child(res_pick)
 
 func update_ui(property: StringName, value: Variant, field: StringName, changing: bool):		
 	$Label.text = str(value)	

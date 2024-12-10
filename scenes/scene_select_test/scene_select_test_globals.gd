@@ -1,3 +1,1 @@
-extends Node
-
-@export var scenes : SceneList
+extends SceneList
