@@ -34,6 +34,7 @@ func init_ui():
 	
 	#gui.res_pick.resource_selected.connect(???)
 	emit_changed(get_edited_property(),current_value)
+	property_changed.connect(current_value.on_selection_changed)
 	
 	
 func on_item_selected(value):
@@ -54,11 +55,7 @@ func get_scene_for_index(index : int):
 func _update_property():
 	
 	var new_value : PackedScene = get_edited_object()[get_edited_property()]
-	print(get_edited_object())
-	print(get_edited_property())
 	
-	updating = true	
-	print("UPDATING - BEFORE current value: ", current_value)
-	current_value.selected_scene = new_value
-	print("UPDATING - AFTER current value: ", current_value)
+	updating = true		
+	current_value.selected_scene = new_value	
 	updating = false

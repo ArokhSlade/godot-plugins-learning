@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="SceneList" load_steps=5 format=3 uid="uid://c5cdpcrrt4p4i"]
 
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_list.gd" id="1_hp0em"]
-[ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/gd1.tscn" id="1_m3hsr"]
-[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/gd2.tscn" id="2_rtnk3"]
-[ext_resource type="PackedScene" uid="uid://cw46il6cl8tnj" path="res://scenes/scene_select_test/gd3.tscn" id="3_2ax8a"]
+[ext_resource type="PackedScene" uid="uid://bjckniy3p5m77" path="res://scenes/scene_select_test/samples_b/gd4.tscn" id="1_jf4ik"]
+[ext_resource type="PackedScene" uid="uid://b06gfqj5b3tnv" path="res://scenes/scene_select_test/samples_b/gd5.tscn" id="2_qgpes"]
+[ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="3_e33eu"]
 
 [resource]
 script = ExtResource("1_hp0em")
-scenes = Array[PackedScene]([ExtResource("1_m3hsr"), ExtResource("2_rtnk3"), ExtResource("3_2ax8a")])
-names = Array[String](["gd1", "gd2", "gd3"])
+scenes = Array[PackedScene]([ExtResource("1_jf4ik"), ExtResource("2_qgpes"), ExtResource("3_e33eu")])
+names = Array[String](["gd4", "gd5", "gd6"])
