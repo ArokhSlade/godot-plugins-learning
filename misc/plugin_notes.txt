@@ -31,3 +31,27 @@ TODO
 - bug: choice is not stored across scene reload
 - bug: deleting/changing the currently selected item from global list does not cause update in property
 - bug: „commont parent not found“ -> couldn’t solve it.
+
+
+2024 12 11
+09:20-
+
+
+
+{ "name": "script", "class_name": &"Script", "type": 24, "hint": 17, "hint_string": "Script", "usage": 1048582 }
+1048582 = 1048576 + 6
+PROPERTY_USAGE_NEVER_DUPLICATE = 1048576
+PROPERTY_USAGE_DEFAULT = 6
+
+{ "name": "scene_list.gd", "class_name": &"", "type": 0, "hint": 0, "hint_string": "res://addons/scene-select-plugin/scene_list.gd", "usage": 128 }
+PROPERTY_USAGE_CATEGORY = 128
+
+{ "name": "scenes", "class_name": &"", "type": 28, "hint": 23, "hint_string": "24/17:PackedScene", "usage": 4102 }
+PROPERTY_USAGE_SCRIPT_VARIABLE 
+PROPERTY_USAGE_DEFAULT 
+
+{ "name": "names", "class_name": &"", "type": 28, "hint": 23, "hint_string": "4:", "usage": 268439558 }
+268439558 = 268435456 + 4096 + 6
+PROPERTY_USAGE_READ_ONLY 
+PROPERTY_USAGE_SCRIPT_VARIABLE 
+PROPERTY_USAGE_DEFAULT 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0yccp047uk0f"]
+[gd_scene load_steps=2 format=3 uid="uid://cr4n5ugmkskkx"]
 
-[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select_ui.gd" id="1_rccwt"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/backups/scene_select_ui_00.gd" id="1_aof0e"]
 
 [node name="SceneSelectUI" type="VBoxContainer"]
-offset_right = 174.0
-offset_bottom = 86.0
-script = ExtResource("1_rccwt")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_aof0e")
 
 [node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 2
