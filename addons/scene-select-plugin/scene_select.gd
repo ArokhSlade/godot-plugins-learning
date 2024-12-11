@@ -7,4 +7,4 @@ extends Resource
 @export var selection_index : int # index of scene in the associated array
 
 func print():
-	print(self, " : ", selected_scene, " : ", selection_index)
+	print(self, " : ", scene_list, " : ", selected_scene, " : ", selection_index)

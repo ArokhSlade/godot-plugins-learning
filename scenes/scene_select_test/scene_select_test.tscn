@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca48o0qoqgrct"]
+[gd_scene load_steps=6 format=3 uid="uid://ca48o0qoqgrct"]
 
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_ulh0s"]
 [ext_resource type="Resource" uid="uid://c5cdpcrrt4p4i" path="res://scenes/scene_select_test/test_resource_scene_list.tres" id="2_yhnxx"]
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="3_jwp4f"]
+[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/gd2.tscn" id="4_xvjqi"]
 
 [sub_resource type="Resource" id="Resource_jeexo"]
 script = ExtResource("3_jwp4f")
 scene_list = ExtResource("2_yhnxx")
+selected_scene = ExtResource("4_xvjqi")
 selection_index = 0
 
 [node name="SceneSelectTest" type="Node2D"]
