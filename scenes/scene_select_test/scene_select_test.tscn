@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ca48o0qoqgrct"]
+[gd_scene load_steps=16 format=3 uid="uid://ca48o0qoqgrct"]
 
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_ulh0s"]
 [ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/samples_a/gd1.tscn" id="2_j7fju"]
@@ -32,6 +32,17 @@ scene_list = SubResource("Resource_86b8a")
 selected_scene = ExtResource("7_wqxit")
 selection_index = 0
 
+[sub_resource type="Resource" id="Resource_16urd"]
+script = ExtResource("5_6a447")
+scenes = Array[PackedScene]([ExtResource("3_xoe43"), ExtResource("7_wqxit"), ExtResource("9_o7k7n")])
+names = Array[String](["gd2", "gd4", "gd6"])
+
+[sub_resource type="Resource" id="Resource_kialk"]
+script = ExtResource("3_jwp4f")
+scene_list = SubResource("Resource_16urd")
+selected_scene = ExtResource("3_xoe43")
+selection_index = 0
+
 [node name="Camera2D" type="Camera2D"]
 
 [node name="SceneSelectTest" type="Node2D" parent="."]
@@ -42,3 +53,8 @@ scene = SubResource("Resource_jeexo")
 position = Vector2(168, 0)
 script = ExtResource("1_ulh0s")
 scene = SubResource("Resource_4vqi3")
+
+[node name="SceneSelectTest3" type="Node2D" parent="."]
+position = Vector2(346, 0)
+script = ExtResource("1_ulh0s")
+scene = SubResource("Resource_kialk")

@@ -2,10 +2,14 @@
 class_name SceneList
 extends Resource
 
+signal scenes_set
+
 @export var scenes : Array[PackedScene] :
 	set(value):
 		scenes = value
-		update_names()
+		if scenes != null:
+			scenes_set.emit()
+			update_names()
 		
 @export var names : Array[String]
 

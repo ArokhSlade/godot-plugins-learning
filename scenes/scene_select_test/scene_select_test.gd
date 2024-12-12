@@ -1,6 +1,7 @@
 @tool
 extends Node2D
 
+
 @export var scene : SceneSelect :
 	set(value):
 		scene = value
@@ -12,8 +13,10 @@ extends Node2D
 			queue_redraw() #TODO: check if necessary
 			if not scene.selection_changed.is_connected(on_scene_selection_changed):
 				scene.selection_changed.connect(on_scene_selection_changed)
-			
+
+
 var scene_instance
+
 
 func update_instance():
 	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 		
@@ -26,7 +29,13 @@ func update_instance():
 
 func _ready():
 	update_instance()	
-	
+
+
 func on_scene_selection_changed():
-	print("signal received!")
+	print("on_scene_selection_changed: signal received!")
 	update_instance()	
+
+
+func on_scene_list_changed():
+	print("on_scne_list_changed: signal received!")
+	update_instance()
