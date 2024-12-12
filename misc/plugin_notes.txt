@@ -25,12 +25,25 @@ DONE
 - feature: add and remove items from global array -> names update automatically
 - bug: at start-up, when null-element is selected, still an old preview is shown
 
-TODO
+2024 12 10
 - use for game
 - make presentation
 - bug: choice is not stored across scene reload
+
+2024 12 11
+- transition from global data to data-from-resource
+- working sample
+
+
+TODO
+
+ICED:
+2024 12 10
 - bug: deleting/changing the currently selected item from global list does not cause update in property
+-> iced because transition from global data to data-from-resource 
+2024 12 10
 - bug: „commont parent not found“ -> couldn’t solve it.
+-> iced because error hasn't occured since design transitioned from global data to data-from-resource
 
 
 2024 12 11
