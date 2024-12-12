@@ -1,15 +1,3 @@
-how do i identify a property as being of the "entity_selection_array" category?
-or even "array to select anything from" category?
-maybe make the property a custom type?
-
-{ "name": "unique_name_in_owner"
- "class_name": &""
- "type": 1
- "hint": 0
- "hint_string": ""
- "usage": 2
-
-
 wip bugs and features
 DONE
 - bug: drop-down menu resetting on its own -> fixed
@@ -34,27 +22,34 @@ DONE
 - transition from global data to data-from-resource
 - working sample
 
+2024 12 12 
+- made it so changing the array can cause update to visuals
+- BUG(2024 12 12): res://addons/scene-select-plugin/scene_select_property.gd:57 - Invalid access to property or key of type 'StringName' on a base object of type 'Resource (SceneSelect)'.
+-> bug happened when i tried addinv my EditorProperty script with add_property_editor_for_multiple_properties(), 
+but still was calling get_edited_property(), which according to the docs, only works for single-property-editors
+- bug(2024 12 12): scene select ui not showing node preview
+-> code was still using old symbol names
+
 
 TODO
+- 
+- make the instantiated sprite clickable to get the object in editor
+- make usage simpler, so it's SceneSelect resource + SceneList resource
+- clean up ui: label should adhere to same format specs as other inspector fields (it's too long)
+-> BUG: tried different ways of trimming the field, from text overrun behavior to changing node type to line edit field
+		in all cases, it causes the editor to hang when i widen the inspector tab enough for the full name to show 
+		(as soon as the last character would be drawn)
+- clean up the ui (hide, read-only, ...)
+
+
 
 ICED:
 2024 12 10
 - bug: deleting/changing the currently selected item from global list does not cause update in property
 -> iced because transition from global data to data-from-resource 
-2024 12 10
 - bug: „commont parent not found“ -> couldn’t solve it.
 -> iced because error hasn't occured since design transitioned from global data to data-from-resource
 
-
-2024 12 11
-09:20-09:59
-13:37-14:13
-19:15-19:29
-19:37-21:35
-
-
-2024 12 12
-09:25-
 
 { "name": "script", "class_name": &"Script", "type": 24, "hint": 17, "hint_string": "Script", "usage": 1048582 }
 1048582 = 1048576 + 6

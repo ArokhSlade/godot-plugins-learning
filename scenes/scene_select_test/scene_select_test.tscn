@@ -1,25 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://ca48o0qoqgrct"]
+[gd_scene load_steps=15 format=3 uid="uid://ca48o0qoqgrct"]
 
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_ulh0s"]
+[ext_resource type="Resource" uid="uid://dm4lwpxotvl3y" path="res://scenes/scene_select_test/test_resource_scene_select.tres" id="2_d22dk"]
 [ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/samples_a/gd1.tscn" id="2_j7fju"]
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="3_jwp4f"]
-[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/samples_a/gd2.tscn" id="3_xoe43"]
-[ext_resource type="PackedScene" uid="uid://cw46il6cl8tnj" path="res://scenes/scene_select_test/samples_a/gd3.tscn" id="4_o7sr6"]
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_list.gd" id="5_6a447"]
 [ext_resource type="PackedScene" uid="uid://bjckniy3p5m77" path="res://scenes/scene_select_test/samples_b/gd4.tscn" id="7_wqxit"]
 [ext_resource type="PackedScene" uid="uid://b06gfqj5b3tnv" path="res://scenes/scene_select_test/samples_b/gd5.tscn" id="8_li88k"]
 [ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="9_o7k7n"]
-
-[sub_resource type="Resource" id="Resource_dgixf"]
-script = ExtResource("5_6a447")
-scenes = Array[PackedScene]([ExtResource("2_j7fju"), ExtResource("3_xoe43"), ExtResource("4_o7sr6")])
-names = Array[String](["gd1", "gd2", "gd3"])
-
-[sub_resource type="Resource" id="Resource_jeexo"]
-script = ExtResource("3_jwp4f")
-scene_list = SubResource("Resource_dgixf")
-selected_scene = ExtResource("4_o7sr6")
-selection_index = 2
 
 [sub_resource type="Resource" id="Resource_86b8a"]
 script = ExtResource("5_6a447")
@@ -29,8 +17,7 @@ names = Array[String](["gd4", "gd5", "gd6"])
 [sub_resource type="Resource" id="Resource_4vqi3"]
 script = ExtResource("3_jwp4f")
 scene_list = SubResource("Resource_86b8a")
-selected_scene = ExtResource("7_wqxit")
-selection_index = 0
+selected_scene = ExtResource("9_o7k7n")
 
 [sub_resource type="Resource" id="Resource_2l0ih"]
 script = ExtResource("5_6a447")
@@ -40,8 +27,7 @@ names = Array[String](["gd4", "gd6"])
 [sub_resource type="Resource" id="Resource_b0tvl"]
 script = ExtResource("3_jwp4f")
 scene_list = SubResource("Resource_2l0ih")
-selected_scene = ExtResource("9_o7k7n")
-selection_index = 1
+selected_scene = ExtResource("7_wqxit")
 
 [sub_resource type="Resource" id="Resource_dr3ll"]
 script = ExtResource("5_6a447")
@@ -52,17 +38,16 @@ names = Array[String]([])
 script = ExtResource("3_jwp4f")
 scene_list = SubResource("Resource_dr3ll")
 selected_scene = ExtResource("2_j7fju")
-selection_index = 1
 
 [node name="Camera2D" type="Camera2D"]
 
 [node name="SceneSelectTest" type="Node2D" parent="."]
 position = Vector2(-314, 212)
 script = ExtResource("1_ulh0s")
-scene = SubResource("Resource_jeexo")
+scene = ExtResource("2_d22dk")
 
 [node name="SceneSelectTest2" type="Node2D" parent="."]
-position = Vector2(521, 155)
+position = Vector2(96, 128)
 script = ExtResource("1_ulh0s")
 scene = SubResource("Resource_4vqi3")
 
@@ -75,3 +60,8 @@ scene = SubResource("Resource_b0tvl")
 position = Vector2(-370, -221)
 script = ExtResource("1_ulh0s")
 scene = SubResource("Resource_kialk")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-128, 80)
+script = ExtResource("1_ulh0s")
+scene = ExtResource("2_d22dk")

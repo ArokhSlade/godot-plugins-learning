@@ -24,11 +24,24 @@ DONE
 - implementation: handle null instances (preview generation etc.)
 - feature: add and remove items from global array -> names update automatically
 - bug: at start-up, when null-element is selected, still an old preview is shown
-
-TODO
+2024 12 10:
 - use for game
 - make presentation
 - bug: choice is not stored across scene reload
-- bug: deleting/changing the currently selected item from global list does not cause update in property
-- bug: „commont parent not found“ -> couldn’t solve it.
+
+2024 12 11 
 - LEAK/style: enemy_picker_plugin: current_value = EnemyChoice.new() # TODO: dont't reallocate
+
+2024 12 12
+- made it so changing the array can cause updated visuals
+
+TODO
+-be able to click the instantiated sprite in the editor
+-streamline the process of having a SceneSelect resource AND a SceneList resource
+
+
+ICED: 
+- bug: deleting/changing the currently selected item from global list does not cause update in property
+-> iced because not using global list anymore
+- bug: „commont parent not found“ -> couldn’t solve it.
+-> iced because bug not occuring anymore

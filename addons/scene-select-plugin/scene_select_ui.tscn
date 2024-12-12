@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select_ui.gd" id="1_rccwt"]
 
 [node name="SceneSelectUI" type="VBoxContainer"]
-offset_right = 174.0
+offset_right = 96.0
 offset_bottom = 86.0
 script = ExtResource("1_rccwt")
 
@@ -13,7 +13,8 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-text = "hi"
+size_flags_vertical = 3
+text = "asd"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
