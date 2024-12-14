@@ -30,9 +30,27 @@ but still was calling get_edited_property(), which according to the docs, only w
 - bug(2024 12 12): scene select ui not showing node preview
 -> code was still using old symbol names
 
+2024 12 13:
+- try out 2 approaches for property parsing:
+-> 1: let _can_handle() detect the SceneSelect, and call add_property_editor_for_multiple_properties() in parse_begin
+	  and maybe utilize multiple_properties_changed(properties: PackedStringArray, value: Array)
+- bug: the index is stored locally, but then is being forgotten by the time update_ui is called. why?
+-> because the property script does get free()d after our even handler finishes, if said handler called emit_changed
+-> for some reason, calling emit_changed within our dropdown event handler causes the property to be deleted
+-> i tried removing the emit_changed and instead calling _update_property directly, 
+   but A) now the user is not notified about the changed and so its eventhandler doesn't cause a re-instantiation
+   and B) even so, as soon as i deselect-reselect the node, it will have forgotten its selection.
+=> for now, store the selection as an integer...
 
 TODO
-- 
+- try out 2 approaches for property parsing:
+-> 1: let _can_handle() detect the SceneSelect, and call add_property_editor_for_multiple_properties() in parse_begin
+	  and maybe utilize multiple_properties_changed(properties: PackedStringArray, value: Array)
+-> 2: let _can_handle() detect any object, and check _parse_property() for SceneSelect resource, 
+	  then add_property_editor(), and make use of the `field` parameter in signal 
+	  property_changed(property: StringName, value: Variant, field: StringName, changing: bool)
+- bug: deleting a user scene from the tree does not stop it from receiving signals and reacting to them
+
 - make the instantiated sprite clickable to get the object in editor
 - make usage simpler, so it's SceneSelect resource + SceneList resource
 - clean up ui: label should adhere to same format specs as other inspector fields (it's too long)
@@ -41,7 +59,10 @@ TODO
 		(as soon as the last character would be drawn)
 - clean up the ui (hide, read-only, ...)
 
-
+QUESTIONS:
+2024 12 13
+why does the property get free()d and re-new()ed after event handler calls emit_changed()?
+(it doesn't happen when emit_changed is called within the _init function. which would cause an infinite loop)
 
 ICED:
 2024 12 10

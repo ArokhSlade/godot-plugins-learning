@@ -17,25 +17,26 @@ extends Node2D
 
 var scene_instance
 
-
-func update_instance():
+func update_instance():	
+	print("(%s)update_instance" % Time.get_time_string_from_system())	
 	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 		
 		scene_instance.queue_free()
 		scene_instance = null
 	if scene && scene.selected_scene != null:
 		scene_instance = scene.selected_scene.instantiate()
 		add_child(scene_instance)
-	
+
 
 func _ready():
-	update_instance()	
+	update_instance()
 
 
 func on_scene_selection_changed():
-	print("on_scene_selection_changed: signal received!")
-	update_instance()	
+	print(self)
+	print("(%s)on_scene_selection_changed: signal received!" % Time.get_time_string_from_system())
+	update_instance()
 
 
 func on_scene_list_changed():
-	print("on_scne_list_changed: signal received!")
+	print("(%s)on_scne_list_changed: signal received!" % Time.get_time_string_from_system())
 	update_instance()
