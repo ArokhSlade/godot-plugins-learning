@@ -19,7 +19,7 @@ func update_ui(property: StringName, value: Variant, field: StringName, changing
 			
 func update_ui_simple(choice : int):
 	print("update_ui_simple(%s)" % choice)
-	$Label.text = "str(value)"
+	$Label.text = "why exists me?"
 	
 	$OptionButton.selected = choice
 	

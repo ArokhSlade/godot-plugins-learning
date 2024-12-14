@@ -41,16 +41,20 @@ but still was calling get_edited_property(), which according to the docs, only w
    but A) now the user is not notified about the changed and so its eventhandler doesn't cause a re-instantiation
    and B) even so, as soon as i deselect-reselect the node, it will have forgotten its selection.
 => for now, store the selection as an integer...
-
-TODO
-- try out 2 approaches for property parsing:
--> 1: let _can_handle() detect the SceneSelect, and call add_property_editor_for_multiple_properties() in parse_begin
-	  and maybe utilize multiple_properties_changed(properties: PackedStringArray, value: Array)
 -> 2: let _can_handle() detect any object, and check _parse_property() for SceneSelect resource, 
 	  then add_property_editor(), and make use of the `field` parameter in signal 
 	  property_changed(property: StringName, value: Variant, field: StringName, changing: bool)
-- bug: deleting a user scene from the tree does not stop it from receiving signals and reacting to them
+   -> signal not used yet
 
+TODO
+
+- make property react to changes in the array.
+ - check whether our scene still exists, and at the same index
+ - always assume the user wants to keep the scene, even if the array and index may changed 
+  -> display a warning
+  - even if the scene was deleted from the array
+   -> display a warning
+- bug: deleting a user scene from the tree does not stop it from receiving signals and reacting to them
 - make the instantiated sprite clickable to get the object in editor
 - make usage simpler, so it's SceneSelect resource + SceneList resource
 - clean up ui: label should adhere to same format specs as other inspector fields (it's too long)
