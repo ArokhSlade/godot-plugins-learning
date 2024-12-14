@@ -8,7 +8,7 @@ var current_value : SceneSelect
 var scene_list : SceneList
 var selected_scene : PackedScene
 
-var updating = false #NOTE(ArokhSlade,2024 12 09) following godot docs guidance here, does not make sense to me
+#var updating = false #NOTE(ArokhSlade,2024 12 09) following godot docs guidance here, does not make sense to me
 
 
 
@@ -48,7 +48,7 @@ func on_item_selected(index):
 	current_value.selected_index = index	
 	current_value.selected_scene = current_value.scene_list.scenes[current_value.selected_index]	
 	
-	emit_changed(get_edited_property(),current_value)			
+	emit_changed(get_edited_property(),current_value)
 	print_rich("[color=green]end select[/color]")
 
 
