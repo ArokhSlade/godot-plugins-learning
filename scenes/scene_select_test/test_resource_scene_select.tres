@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="SceneSelect" load_steps=4 format=3 uid="uid://dm4lwpxotvl3y"]
 
 [ext_resource type="Resource" uid="uid://c5cdpcrrt4p4i" path="res://scenes/scene_select_test/test_resource_scene_list.tres" id="1_u3ny4"]
-[ext_resource type="PackedScene" uid="uid://b06gfqj5b3tnv" path="res://scenes/scene_select_test/samples_b/gd5.tscn" id="3_igk6q"]
+[ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="3_wn70r"]
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="5_bthnh"]
 
 [resource]
 script = ExtResource("5_bthnh")
 scene_list = ExtResource("1_u3ny4")
-selected_scene = ExtResource("3_igk6q")
+selected_scene = ExtResource("3_wn70r")
+selected_index = 2

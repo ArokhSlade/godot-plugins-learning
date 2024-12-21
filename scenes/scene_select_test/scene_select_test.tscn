@@ -1,11 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca48o0qoqgrct"]
+[gd_scene load_steps=6 format=3 uid="uid://ca48o0qoqgrct"]
 
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_user_root.gd" id="1_h3f74"]
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_ulh0s"]
 [ext_resource type="Resource" uid="uid://dm4lwpxotvl3y" path="res://scenes/scene_select_test/test_resource_scene_select.tres" id="2_d22dk"]
+[ext_resource type="Texture2D" uid="uid://cx5xwts34plh1" path="res://icon.svg" id="3_7p1ul"]
+[ext_resource type="Texture2D" uid="uid://dg7ofcrrldypu" path="res://radial_gradient.png" id="4_lylle"]
 
 [node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_h3f74")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(240, -80)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("3_7p1ul")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.235294, 0.584314, 0.643137, 0.372549)
+polygon = PackedVector2Array(-296, -128, -400, -24, -232, 40, -120, -80)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(328, 56)
+energy = 4.85
+texture = ExtResource("4_lylle")
 
 [node name="SceneSelectTest" type="Node2D" parent="."]
-position = Vector2(-314, 212)
+position = Vector2(-192, 176)
 script = ExtResource("1_ulh0s")
 scene = ExtResource("2_d22dk")
+metadata/_edit_group_ = true
+
+[node name="SceneSelectTest3" type="Node2D" parent="."]
+position = Vector2(-8, 240)
+script = ExtResource("1_ulh0s")
+scene = ExtResource("2_d22dk")
+metadata/_edit_group_ = true
+
+[node name="SceneSelectTest2" type="Node2D" parent="."]
+position = Vector2(160, 200)
+script = ExtResource("1_ulh0s")
+scene = ExtResource("2_d22dk")
+metadata/_edit_group_ = true
+
+[connection signal="item_rect_changed" from="SceneSelectTest" to="." method="_on_scene_select_test_item_rect_changed"]
+[connection signal="item_rect_changed" from="SceneSelectTest" to="SceneSelectTest" method="_on_scene_select_test_item_rect_changed"]
+[connection signal="item_rect_changed" from="SceneSelectTest2" to="." method="_on_scene_select_test_item_rect_changed"]
+[connection signal="item_rect_changed" from="SceneSelectTest2" to="SceneSelectTest2" method="_on_scene_select_test_item_rect_changed"]
