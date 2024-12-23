@@ -104,6 +104,12 @@ idea 4:
   - store the relative path from edited_Scene_root to the node and
   - it ASDH ASUIOJKL works !!!!!!!!!!!!!11!
 
+idea 5, enhanced version of idea 3:
+- exposes the drop-down to user node, so intended use-case is supported (imported scene from file editable in local tree)
+- tested duplication behavior. acceptable. can change the array in the original scene. if i want a distinct array, the i have to create a new scene.
+
+- idea to improve Node approach: expose array resource picker in custom ui, so it can be configured at top level
+
 ICED: 
 - bug: deleting/changing the currently selected item from global list does not cause update in property
 -> iced because not using global list anymore

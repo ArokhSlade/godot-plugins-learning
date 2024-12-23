@@ -29,6 +29,7 @@ func _notification(what):
 
 
 func init_ui():	
+	gui.initialize_list(scene_list)
 	add_child(gui)	
 	for option in scene_list.names:
 		option_button.add_item(option)	
