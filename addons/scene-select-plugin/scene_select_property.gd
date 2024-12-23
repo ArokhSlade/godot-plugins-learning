@@ -13,11 +13,13 @@ var updating = false #NOTE(ArokhSlade,2024 12 09) following godot docs guidance 
 
 
 ##owner is the Node which has the script where this scene_select is used as a variable
-#todo: just call get_edited_object()
+
 func _init(scene_select : SceneSelect, _owning_object : Object): 
 	print_rich("[color=yellow]init property[/color]")	
 	current_value = scene_select
-	owning_object = _owning_object
+	print("_owning object: ", _owning_object)
+	print("edited object: ", get_edited_object())
+	owning_object = _owning_object # would like to but cannot use get_edited_object() here, returns null, but works in _update_property()
 	scene_list = current_value.scene_list	
 	print(current_value.print_me())
 	init_ui()
@@ -61,5 +63,6 @@ func _update_property():
 		owning_object.add_child(scene_instance)
 	
 	gui.update_ui_simple(current_value.selected_index)
+	print("edited object: ", get_edited_object())
 	print_rich("[color=red]done updating[/color]")
 		

@@ -14,7 +14,6 @@ extends Node2D
 			queue_redraw() #TODO: check if necessary
 			if not scene.selection_changed.is_connected(on_scene_selection_changed):
 				scene.selection_changed.connect(on_scene_selection_changed)
-			scene.emit_changed()
 
 var scene_instance
 

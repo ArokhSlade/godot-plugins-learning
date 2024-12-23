@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca48o0qoqgrct"]
+[gd_scene load_steps=13 format=3 uid="uid://ca48o0qoqgrct"]
 
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_user_root.gd" id="1_h3f74"]
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_ulh0s"]
-[ext_resource type="Resource" uid="uid://dm4lwpxotvl3y" path="res://scenes/scene_select_test/test_resource_scene_select.tres" id="2_d22dk"]
 [ext_resource type="Texture2D" uid="uid://cx5xwts34plh1" path="res://icon.svg" id="3_7p1ul"]
 [ext_resource type="Texture2D" uid="uid://dg7ofcrrldypu" path="res://radial_gradient.png" id="4_lylle"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="5_yh7v5"]
+[ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/samples_a/gd1.tscn" id="6_6acg8"]
+[ext_resource type="Resource" uid="uid://c5cdpcrrt4p4i" path="res://scenes/scene_select_test/test_resource_scene_list.tres" id="6_jocr6"]
+[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/samples_a/gd2.tscn" id="7_ikd3f"]
+[ext_resource type="PackedScene" uid="uid://cw46il6cl8tnj" path="res://scenes/scene_select_test/samples_a/gd3.tscn" id="8_4hfqm"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_list.gd" id="9_a57pa"]
+[ext_resource type="PackedScene" uid="uid://bjckniy3p5m77" path="res://scenes/scene_select_test/samples_b/gd4.tscn" id="11_c7orc"]
+
+[sub_resource type="Resource" id="Resource_45hfk"]
+script = ExtResource("9_a57pa")
+scenes = Array[PackedScene]([ExtResource("6_6acg8"), ExtResource("7_ikd3f"), ExtResource("8_4hfqm")])
+names = Array[String](["gd1", "gd2", "gd3"])
 
 [node name="Camera2D" type="Camera2D"]
 script = ExtResource("1_h3f74")
@@ -25,22 +36,34 @@ position = Vector2(328, 56)
 energy = 4.85
 texture = ExtResource("4_lylle")
 
-[node name="SceneSelectTest" type="Node2D" parent="."]
+[node name="SceneSelectTest" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
 position = Vector2(-192, 176)
 script = ExtResource("1_ulh0s")
-scene = ExtResource("2_d22dk")
+scene = NodePath("SceneSelect")
 metadata/_edit_group_ = true
 
-[node name="SceneSelectTest3" type="Node2D" parent="."]
-position = Vector2(-8, 240)
+[node name="SceneSelect" type="Node2D" parent="SceneSelectTest"]
+script = ExtResource("5_yh7v5")
+scene_list = SubResource("Resource_45hfk")
+selected_scene = ExtResource("7_ikd3f")
+selected_index = 1
+
+[node name="SceneSelectTest3" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
+position = Vector2(8, 240)
 script = ExtResource("1_ulh0s")
-scene = ExtResource("2_d22dk")
+scene = NodePath("SceneSelect")
 metadata/_edit_group_ = true
 
-[node name="SceneSelectTest2" type="Node2D" parent="."]
+[node name="SceneSelect" type="Node2D" parent="SceneSelectTest3"]
+script = ExtResource("5_yh7v5")
+scene_list = ExtResource("6_jocr6")
+selected_scene = ExtResource("11_c7orc")
+selected_index = 0
+
+[node name="SceneSelectTest2" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
 position = Vector2(160, 200)
 script = ExtResource("1_ulh0s")
-scene = ExtResource("2_d22dk")
+scene = NodePath("../SceneSelectTest3/SceneSelect")
 metadata/_edit_group_ = true
 
 [connection signal="item_rect_changed" from="SceneSelectTest" to="." method="_on_scene_select_test_item_rect_changed"]

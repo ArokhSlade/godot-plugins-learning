@@ -1,6 +1,6 @@
 @tool
 class_name SceneSelect
-extends Resource
+extends Node2D
 
 signal selection_changed
 signal scene_list_changed
@@ -18,24 +18,15 @@ signal scene_list_changed
 		if (value != null):
 			selected_scene = value
 			call_deferred("update_visual")
-			emit_changed()
 
-var selected_index : int # used by scene_select_property 
-#@export var selected_index : int # used by scene_select_property 
-#@export var selected_index : int : # used by scene_select_property 
-	#set(value):
-		#print("selected index set from ", selected_index, " to ", value)
-		#selected_index = value
+var selected_index : int = -1
 		
 var scene_instance : Node
 
 
-func update_visual():	
-	# 1st aproach: try adding scene instance to "parent"
-	# i see no way of accessing the specific node that this Resource is "attached" to.
-	# best i can do is attach to the root scene
+func update_visual():		
 	scene_instance = selected_scene.instantiate()
-	var user_node = Engine.get_main_loop().edited_scene_root
+	var user_node = get_parent()
 	user_node.add_child(scene_instance) 
 
 
@@ -44,17 +35,10 @@ func update_visual():
 func on_selection_changed(property: StringName, value: Variant, field: StringName, changing: bool):
 	print("selection_changed")	
 	selection_changed.emit()
-	emit_changed()
-	
 
-# 2nd approach:
-# have a global autoload st keep book on all SceneSelect objects
-# I thought "from the outside" i could "see" the nodes/scenes the SceneSelects are "attached" to
-# So via a EditorPlugin I could on_scene_changed have the auto-load tell all the scene selects to "visualize()"
-# but all I have is a reference to this resource. without a reference to the node that "owns" them, i am stuck...
 func _init():	
 	print_me()
-	SceneSelectRegistry.all_scene_selects.append(self)
+	
 
 func visualize(owning_node:Node):
 	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 		
@@ -64,10 +48,9 @@ func visualize(owning_node:Node):
 		scene_instance = selected_scene.instantiate()
 		owning_node.add_child(scene_instance)
 
-#todo: replace extra signals with just emit_changed()
+
 func on_scenes_set():
 	scene_list_changed.emit()
-	emit_changed()
 	
 
 func print_me():

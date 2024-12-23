@@ -24,4 +24,25 @@ func _exit_tree():
 func on_scene_changed(scene_root:Node):
 	print("scene changed!!!")
 	print_rich("[color=purple]initialize all scene selects via call-back: [/color]", scene_root)
-	SceneSelectRegistry.visualize_all_scenes()
+	#SceneSelectRegistry.visualize_all_scenes()
+
+
+
+#func _handles(object):
+	#if object is Node2D && object.has_method("on_scene_selection_changed"):
+		#print("object is SceneSelectTest: ", object)
+		#var script = object.get_script()
+		#print (script.scene_instance)
+	#if object is SceneSelect:
+		#print("handles ", object)
+		#return true
+		#
+#func _edit(object):
+	#print("_edit()ing ", object)
+	#
+#func _make_visible(visible):
+	#print("_make_visible() ", visible)
+#
+#func _forward_canvas_gui_input(event):
+	#print("canvas gui input received: ", event)
+	#return true
