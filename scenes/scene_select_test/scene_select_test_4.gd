@@ -2,7 +2,7 @@
 extends Node2D
 
 
-@export var scene : SceneSelect :
+@export var scene : SceneSelect4 :
 	set(value):
 		scene = value
 		

@@ -1,0 +1,112 @@
+[gd_scene load_steps=18 format=3 uid="uid://bmioe50bdhr8a"]
+
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_user_root.gd" id="1_0l1l7"]
+[ext_resource type="Texture2D" uid="uid://cx5xwts34plh1" path="res://icon.svg" id="2_lbrsi"]
+[ext_resource type="Texture2D" uid="uid://dg7ofcrrldypu" path="res://radial_gradient.png" id="3_v0wyk"]
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="4_qfld1"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="5_jreol"]
+[ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/samples_a/gd1.tscn" id="6_3m3md"]
+[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/samples_a/gd2.tscn" id="7_fy6sn"]
+[ext_resource type="PackedScene" uid="uid://cw46il6cl8tnj" path="res://scenes/scene_select_test/samples_a/gd3.tscn" id="8_5a42k"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_list.gd" id="9_wi1ey"]
+[ext_resource type="Resource" uid="uid://c5cdpcrrt4p4i" path="res://scenes/scene_select_test/test_resource_scene_list.tres" id="10_15sxp"]
+[ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="11_8fak2"]
+[ext_resource type="PackedScene" uid="uid://b06gfqj5b3tnv" path="res://scenes/scene_select_test/samples_b/gd5.tscn" id="12_0mddl"]
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test_4.gd" id="13_bwfbk"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select_4.gd" id="14_63lon"]
+
+[sub_resource type="Resource" id="Resource_45hfk"]
+script = ExtResource("9_wi1ey")
+scenes = Array[PackedScene]([ExtResource("6_3m3md"), ExtResource("7_fy6sn"), ExtResource("8_5a42k")])
+names = Array[String](["gd1", "gd2", "gd3"])
+
+[sub_resource type="Resource" id="Resource_umlkh"]
+script = ExtResource("14_63lon")
+scene_list = ExtResource("10_15sxp")
+selected_scene = ExtResource("12_0mddl")
+selected_index = 1
+owner = Object(Node2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(-296, 464),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"script":ExtResource("13_bwfbk"),"scene":SubResource("Resource_umlkh"),"scene_instance":null)
+
+
+[sub_resource type="Resource" id="Resource_wtlx2"]
+script = ExtResource("14_63lon")
+scene_list = ExtResource("10_15sxp")
+selected_scene = ExtResource("11_8fak2")
+selected_index = 2
+owner = Object(Node2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(-56, 504),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"script":ExtResource("13_bwfbk"),"scene":SubResource("Resource_wtlx2"),"scene_instance":null)
+
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_0l1l7")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(240, -80)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_lbrsi")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.235294, 0.584314, 0.643137, 0.372549)
+polygon = PackedVector2Array(-296, -128, -400, -24, -232, 40, -120, -80)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(328, 56)
+energy = 4.85
+texture = ExtResource("3_v0wyk")
+
+[node name="SceneSelectTest" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
+position = Vector2(-192, 176)
+script = ExtResource("4_qfld1")
+scene = NodePath("SceneSelect")
+metadata/_edit_group_ = true
+
+[node name="SceneSelect" type="Node2D" parent="SceneSelectTest"]
+script = ExtResource("5_jreol")
+scene_list = SubResource("Resource_45hfk")
+selected_scene = ExtResource("7_fy6sn")
+selected_index = 1
+
+[node name="SceneSelectTest3" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
+position = Vector2(8, 240)
+script = ExtResource("4_qfld1")
+scene = NodePath("SceneSelect")
+metadata/_edit_group_ = true
+
+[node name="SceneSelect" type="Node2D" parent="SceneSelectTest3"]
+script = ExtResource("5_jreol")
+scene_list = ExtResource("10_15sxp")
+selected_scene = ExtResource("11_8fak2")
+selected_index = 2
+
+[node name="SceneSelectTest4" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
+position = Vector2(392, 232)
+script = ExtResource("4_qfld1")
+scene = NodePath("SceneSelect")
+metadata/_edit_group_ = true
+
+[node name="SceneSelect" type="Node2D" parent="SceneSelectTest4"]
+script = ExtResource("5_jreol")
+scene_list = ExtResource("10_15sxp")
+selected_scene = ExtResource("12_0mddl")
+selected_index = 1
+
+[node name="SceneSelectTest2" type="Node2D" parent="."]
+position = Vector2(160, 200)
+script = ExtResource("4_qfld1")
+metadata/_edit_group_ = true
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-296, 464)
+script = ExtResource("13_bwfbk")
+scene = SubResource("Resource_umlkh")
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(-56, 504)
+script = ExtResource("13_bwfbk")
+scene = SubResource("Resource_wtlx2")
+
+[connection signal="item_rect_changed" from="SceneSelectTest" to="." method="_on_scene_select_test_item_rect_changed"]
+[connection signal="item_rect_changed" from="SceneSelectTest" to="SceneSelectTest" method="_on_scene_select_test_item_rect_changed"]
+[connection signal="item_rect_changed" from="SceneSelectTest2" to="." method="_on_scene_select_test_item_rect_changed"]
+[connection signal="item_rect_changed" from="SceneSelectTest2" to="SceneSelectTest2" method="_on_scene_select_test_item_rect_changed"]

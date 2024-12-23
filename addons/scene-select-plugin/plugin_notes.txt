@@ -61,14 +61,42 @@ TODO
  - SceneSelectInspector will trigger on the SceneSelect object itself, not on the owner
  - the SceneSelect is a Node that presents data in a certain way, 
    similar to how Sprite2D presents a Texture2D in a certain way
+ - useability problem: have to edit the child node to change selection,
+   means it cannot be changed as imported scene in another scene,
+   which defeats the purpose if we want to use a SceneSelect 
+   as part of something like an NPC spawner
+ - => disqualified for lacking fitness for purpose
 
 idea 4:
  - SceneSelect extends Resource
  - and holds a reference to its owner node
  - the reference is set when the user clicks on the node, 
    because it's set by the InspectorPlugin
- - which means it's already disqualified for inferior usability
-
+ - anticipated issue: duplicating the node holding the resource will both duplicate 
+   the resource and the reference
+ => result:
+ - yes, copying the node leads to all kinds of weird bugs, it works once the user
+   makes a new resource and assigns values as needed, which is kind of in line
+   with the godot spirit because the same issues happen when we copy things like Area2D
+   and then make changes to the Shape2D
+ - however, against expectation, the nodes still cannot render on load,
+   despite available values
+ => discovered 
+   scene_instance.owner = Engine.get_main_loop().edited_scene_root
+   now i get something i never wanted ... - the instance being persisted in the scene
+   -> not using this approach for now
+ - seems that the node reference i store is somehow invalid, but no error message
+ - when i disable the resetting of the node reference in the property editor, 
+   then the object stays invisible.
+ - i assume it has to do with trying to store a reference to a scene node in a resource, 
+   which lives outside of nodes
+ - that means i would need some node in the scene to store the information. 
+ - i can instantiate and persist such a node with the owner property, as noted above.
+ - but the problem is that the next time i load the scene, i cannot delete the node, 
+   as i have no reference to it. which means when the user makes a selection, another node
+   will be instantiated without replacing the old one.
+ => i declare this attempt to have been proven as not viable for my intended purpose.
+	it's okay.
 ICED: 
 - bug: deleting/changing the currently selected item from global list does not cause update in property
 -> iced because not using global list anymore
