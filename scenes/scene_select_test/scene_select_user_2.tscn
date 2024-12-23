@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ebhs7adu02gs"]
+
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_tpsfv"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="2_7ivy1"]
+[ext_resource type="Resource" uid="uid://c5cdpcrrt4p4i" path="res://scenes/scene_select_test/test_resource_scene_list.tres" id="3_7oeju"]
+[ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="4_lswg0"]
+
+[node name="SceneSelectTest4" type="Node2D" node_paths=PackedStringArray("scene")]
+position = Vector2(392, 232)
+script = ExtResource("1_tpsfv")
+scene = NodePath("SceneSelect")
+metadata/_edit_group_ = true
+
+[node name="SceneSelect" type="Node2D" parent="."]
+script = ExtResource("2_7ivy1")
+scene_list = ExtResource("3_7oeju")
+selected_scene = ExtResource("4_lswg0")
+selected_index = 2

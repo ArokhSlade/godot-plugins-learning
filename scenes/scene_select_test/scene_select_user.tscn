@@ -1,0 +1,28 @@
+[gd_scene load_steps=11 format=3 uid="uid://hv44kvpmv05x"]
+
+[ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test.gd" id="1_3fpsi"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select.gd" id="2_edfv0"]
+[ext_resource type="PackedScene" uid="uid://cwsd2l163slhx" path="res://scenes/scene_select_test/samples_a/gd1.tscn" id="3_danqp"]
+[ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="4_c26fe"]
+[ext_resource type="PackedScene" uid="uid://bjckniy3p5m77" path="res://scenes/scene_select_test/samples_b/gd4.tscn" id="4_fu5t1"]
+[ext_resource type="PackedScene" uid="uid://dg1ud1wd6rcq7" path="res://scenes/scene_select_test/samples_a/gd2.tscn" id="4_lcbta"]
+[ext_resource type="PackedScene" uid="uid://cw46il6cl8tnj" path="res://scenes/scene_select_test/samples_a/gd3.tscn" id="5_mdogf"]
+[ext_resource type="PackedScene" uid="uid://b06gfqj5b3tnv" path="res://scenes/scene_select_test/samples_b/gd5.tscn" id="7_ijmqx"]
+[ext_resource type="Script" path="res://addons/scene-select-plugin/scene_list.gd" id="9_mw8l8"]
+
+[sub_resource type="Resource" id="Resource_vp18v"]
+script = ExtResource("9_mw8l8")
+scenes = Array[PackedScene]([ExtResource("3_danqp"), ExtResource("4_lcbta"), ExtResource("5_mdogf"), ExtResource("4_fu5t1"), ExtResource("7_ijmqx"), ExtResource("4_c26fe")])
+names = Array[String](["gd1", "gd2", "gd3", "gd4", "gd5", "gd6"])
+
+[node name="SceneSelectTest4" type="Node2D" node_paths=PackedStringArray("scene")]
+position = Vector2(392, 232)
+script = ExtResource("1_3fpsi")
+scene = NodePath("SceneSelect")
+metadata/_edit_group_ = true
+
+[node name="SceneSelect" type="Node2D" parent="."]
+script = ExtResource("2_edfv0")
+scene_list = SubResource("Resource_vp18v")
+selected_scene = ExtResource("4_lcbta")
+selected_index = 1

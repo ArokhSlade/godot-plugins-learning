@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmioe50bdhr8a"]
+[gd_scene load_steps=23 format=3 uid="uid://bmioe50bdhr8a"]
 
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_user_root.gd" id="1_0l1l7"]
 [ext_resource type="Texture2D" uid="uid://cx5xwts34plh1" path="res://icon.svg" id="2_lbrsi"]
@@ -12,7 +12,9 @@
 [ext_resource type="Resource" uid="uid://c5cdpcrrt4p4i" path="res://scenes/scene_select_test/test_resource_scene_list.tres" id="10_15sxp"]
 [ext_resource type="PackedScene" uid="uid://byjt1e4p44f5u" path="res://scenes/scene_select_test/samples_b/gd6.tscn" id="11_8fak2"]
 [ext_resource type="PackedScene" uid="uid://b06gfqj5b3tnv" path="res://scenes/scene_select_test/samples_b/gd5.tscn" id="12_0mddl"]
+[ext_resource type="PackedScene" uid="uid://hv44kvpmv05x" path="res://scenes/scene_select_test/scene_select_user.tscn" id="13_a5luc"]
 [ext_resource type="Script" path="res://scenes/scene_select_test/scene_select_test_4.gd" id="13_bwfbk"]
+[ext_resource type="PackedScene" uid="uid://ebhs7adu02gs" path="res://scenes/scene_select_test/scene_select_user_2.tscn" id="14_3y3ob"]
 [ext_resource type="Script" path="res://addons/scene-select-plugin/scene_select_4.gd" id="14_63lon"]
 [ext_resource type="PackedScene" uid="uid://bjckniy3p5m77" path="res://scenes/scene_select_test/samples_b/gd4.tscn" id="15_u8cs4"]
 
@@ -32,8 +34,7 @@ scene_list = ExtResource("10_15sxp")
 selected_scene = ExtResource("12_0mddl")
 selected_index = 1
 owner_path = NodePath("Node2D2")
-owner = Object(Node2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(-296, 464),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"script":ExtResource("13_bwfbk"),"scene":SubResource("Resource_umlkh"),"scene_instance":null)
-
+owner = null
 
 [sub_resource type="Resource" id="Resource_wtlx2"]
 script = ExtResource("14_63lon")
@@ -108,17 +109,10 @@ scene_list = ExtResource("10_15sxp")
 selected_scene = ExtResource("11_8fak2")
 selected_index = 2
 
-[node name="SceneSelectTest4" type="Node2D" parent="." node_paths=PackedStringArray("scene")]
-position = Vector2(392, 232)
-script = ExtResource("4_qfld1")
-scene = NodePath("SceneSelect")
-metadata/_edit_group_ = true
+[node name="SceneSelectTest4" parent="." instance=ExtResource("13_a5luc")]
+position = Vector2(552, 224)
 
-[node name="SceneSelect" type="Node2D" parent="SceneSelectTest4"]
-script = ExtResource("5_jreol")
-scene_list = ExtResource("10_15sxp")
-selected_scene = ExtResource("15_u8cs4")
-selected_index = 0
+[node name="SceneSelectTest7" parent="." instance=ExtResource("14_3y3ob")]
 
 [node name="SceneSelectTest2" type="Node2D" parent="."]
 position = Vector2(160, 200)
@@ -139,10 +133,3 @@ scene = SubResource("Resource_wtlx2")
 position = Vector2(216, 512)
 script = ExtResource("13_bwfbk")
 scene = SubResource("Resource_f64h5")
-
-[connection signal="item_rect_changed" from="SceneSelectTest" to="." method="_on_scene_select_test_item_rect_changed"]
-[connection signal="item_rect_changed" from="SceneSelectTest" to="SceneSelectTest" method="_on_scene_select_test_item_rect_changed"]
-[connection signal="item_rect_changed" from="SceneSelectTest5" to="." method="_on_scene_select_test_item_rect_changed"]
-[connection signal="item_rect_changed" from="SceneSelectTest5" to="SceneSelectTest5" method="_on_scene_select_test_item_rect_changed"]
-[connection signal="item_rect_changed" from="SceneSelectTest2" to="." method="_on_scene_select_test_item_rect_changed"]
-[connection signal="item_rect_changed" from="SceneSelectTest2" to="SceneSelectTest2" method="_on_scene_select_test_item_rect_changed"]

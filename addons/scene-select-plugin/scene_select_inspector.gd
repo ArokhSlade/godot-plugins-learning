@@ -8,7 +8,7 @@ var property_instance
 var scene_select : SceneSelect
 
 func _can_handle(object : Object):
-	PluginDevHelpers.print_props(object)	
+	#PluginDevHelpers.print_props(object)	
 	if object is SceneSelect:		
 		return true
 	return true
