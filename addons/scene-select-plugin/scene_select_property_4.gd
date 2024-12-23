@@ -13,7 +13,7 @@ var updating = false #NOTE(ArokhSlade,2024 12 09) following godot docs guidance 
 func _init(scene_select : SceneSelect4, object : Object): 
 	print_rich("[color=yellow]init property[/color]")
 	
-	scene_select.owner_path = object.get_path()
+	scene_select.owner_path = Engine.get_main_loop().edited_scene_root.get_path_to(object)
 	#scene_select.owner = object
 	current_value = scene_select
 	print("edited object: ", get_edited_object())
