@@ -17,36 +17,35 @@ signal scene_list_changed
 		print("selected scene set from ", selected_scene, " to ", value)
 		if (value != null):
 			selected_scene = value
-			call_deferred("update_visual")
+			call_deferred("visualize")
 
 var selected_index : int = -1
 		
 var scene_instance : Node
 
 
-func update_visual():		
-	scene_instance = selected_scene.instantiate()
-	var user_node = get_parent()
-	user_node.add_child(scene_instance) 
+
 
 
 
 
 func on_selection_changed(property: StringName, value: Variant, field: StringName, changing: bool):
-	print("selection_changed")	
+	print("selection_changed")
+	visualize()
 	selection_changed.emit()
 
 func _init():	
 	print_me()
 	
 
-func visualize(owning_node:Node):
+func visualize():
 	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 		
 		scene_instance.queue_free()
 		scene_instance = null
 	if selected_scene != null:
 		scene_instance = selected_scene.instantiate()
-		owning_node.add_child(scene_instance)
+		add_child(scene_instance)
+		print("add_child(scene_instance)")
 
 
 func on_scenes_set():

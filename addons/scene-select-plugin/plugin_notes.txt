@@ -56,11 +56,18 @@ TODO
  - restrict available choices to only direct children of the node that has the SceneSelect variable
  -streamline the process of having a SceneSelect resource AND a SceneList resource
 
--idea 4:
- - SceneSelect extends node
+-idea 3.2:
+ - SceneSelect extends Node
  - SceneSelectInspector will trigger on the SceneSelect object itself, not on the owner
  - the SceneSelect is a Node that presents data in a certain way, 
    similar to how Sprite2D presents a Texture2D in a certain way
+
+idea 4:
+ - SceneSelect extends Resource
+ - and holds a reference to its owner node
+ - the reference is set when the user clicks on the node, 
+   because it's set by the InspectorPlugin
+ - which means it's already disqualified for inferior usability
 
 ICED: 
 - bug: deleting/changing the currently selected item from global list does not cause update in property

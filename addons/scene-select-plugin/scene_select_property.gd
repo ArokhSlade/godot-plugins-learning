@@ -50,12 +50,12 @@ func _update_property():
 	print_rich("[color=red]start updating[/color]")	
 	print("current_value ", current_value.selected_index)
 	
-	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 
-		scene_instance.queue_free()
-		scene_instance = null
-	if current_value.selected_scene != null:
-		scene_instance = current_value.selected_scene.instantiate()
-		add_child(scene_instance)
+	#if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 
+		#scene_instance.queue_free()
+		#scene_instance = null
+	#if current_value.selected_scene != null:
+		#scene_instance = current_value.selected_scene.instantiate()
+		#add_child(scene_instance)
 	
 	gui.update_ui_simple(current_value.selected_index)
 	print("edited object: ", get_edited_object())
