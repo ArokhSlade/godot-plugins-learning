@@ -43,20 +43,24 @@ be able to click the instantiated sprite in the editor
 TODO
 -update old work logs
 -idea 3:
-SceneSelect extends Node
-SceneSelectInspector will still trigger via _parse_property()
-design conflict: 
-make it a Node, to keep it general purpose, as is the intent
-or make it Node2D to allow it to render in the editor?
--> strategy: go with node2D first to get to results with less complications
-			then try to make it work with Node
-- make it so from parent node with the property we can directly jump to the SceneSelect child-node to edit its list (with the movie-scene icon)
-- handle uninitialized properties
-- redraw the thing to nothing if it's empty
-- restrict available choices to only direct children of the node that has the SceneSelect variable
--streamline the process of having a SceneSelect resource AND a SceneList resource
+ SceneSelect extends Node
+ SceneSelectInspector will still trigger via _parse_property()
+ design conflict: 
+ make it a Node, to keep it general purpose, as is the intent
+ or make it Node2D to allow it to render in the editor?
+ -> strategy: go with node2D first to get to results with less complications
+ 			then try to make it work with Node
+ - make it so from parent node with the property we can directly jump to the SceneSelect child-node to edit its list (with the movie-scene icon)
+ - handle uninitialized properties
+ - redraw the thing to nothing if it's empty
+ - restrict available choices to only direct children of the node that has the SceneSelect variable
+ -streamline the process of having a SceneSelect resource AND a SceneList resource
 
-
+-idea 4:
+ - SceneSelect extends node
+ - SceneSelectInspector will trigger on the SceneSelect object itself, not on the owner
+ - the SceneSelect is a Node that presents data in a certain way, 
+   similar to how Sprite2D presents a Texture2D in a certain way
 
 ICED: 
 - bug: deleting/changing the currently selected item from global list does not cause update in property

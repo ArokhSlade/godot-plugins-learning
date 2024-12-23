@@ -5,27 +5,22 @@ var gui = preload("res://addons/scene-select-plugin/scene_select_ui.tscn").insta
 var option_button : OptionButton = gui.find_child("OptionButton")
 
 var current_value : SceneSelect
-var owning_object : Object
 var scene_list : SceneList
 var scene_instance : Node # for Editor respresentation
 
 var updating = false #NOTE(ArokhSlade,2024 12 09) following godot docs guidance here, does not make sense to me
 
-
-##owner is the Node which has the script where this scene_select is used as a variable
-
-func _init(scene_select : SceneSelect, _owning_object : Object): 
+func _init(scene_select : SceneSelect): 
 	print_rich("[color=yellow]init property[/color]")	
-	current_value = scene_select
-	print("_owning object: ", _owning_object)
+	current_value = scene_select	
 	print("edited object: ", get_edited_object())
-	owning_object = _owning_object # would like to but cannot use get_edited_object() here, returns null, but works in _update_property()
+
 	scene_list = current_value.scene_list	
 	print(current_value.print_me())
 	init_ui()
 	property_changed.connect(current_value.on_selection_changed)
 	emit_changed(get_edited_property(),current_value)
-	
+
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
@@ -55,12 +50,12 @@ func _update_property():
 	print_rich("[color=red]start updating[/color]")	
 	print("current_value ", current_value.selected_index)
 	
-	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 		
+	if scene_instance!=null && !scene_instance.is_queued_for_deletion(): 
 		scene_instance.queue_free()
 		scene_instance = null
 	if current_value.selected_scene != null:
 		scene_instance = current_value.selected_scene.instantiate()
-		owning_object.add_child(scene_instance)
+		add_child(scene_instance)
 	
 	gui.update_ui_simple(current_value.selected_index)
 	print("edited object: ", get_edited_object())
