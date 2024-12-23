@@ -21,6 +21,7 @@ signal scene_list_changed
 
 var selected_index : int = -1
 var scene_instance : Node
+var owner_path : NodePath
 var owner : Node
 
 #var call_after_setters_are_done : bool :
@@ -32,13 +33,13 @@ func on_selection_changed(property: StringName, value: Variant, field: StringNam
 	visualize()
 
 func _init():
-	print_me()		
+	print_me()
 	
 
 func visualize():
 	print_rich("[color=purple]VISUALIZE[/color]")
 	print_me()
-	if owner == null:
+	if owner_path == null:
 		print_rich("[color=red]cannot visualize selected scene : owner is <null>[/color]")
 		return
 		
@@ -49,6 +50,7 @@ func visualize():
 	if selected_scene != null:
 		print("initing new scene")
 		scene_instance = selected_scene.instantiate()
+		owner = Engine.get_main_loop().edited_scene_root.get_node(owner_path)
 		owner.add_child(scene_instance)
 		#scene_instance.owner = owner
 		#scene_instance.owner = Engine.get_main_loop().edited_scene_root
@@ -68,5 +70,5 @@ func _validate_property(property):
 		property.usage |= PROPERTY_USAGE_READ_ONLY
 	if property.name == "selected_index":
 		property.usage |= PROPERTY_USAGE_STORAGE
-	if property.name == "owner":
+	if property.name in ["owner", "owner_path"]:
 		property.usage |= PROPERTY_USAGE_STORAGE | PROPERTY_USAGE_SCRIPT_VARIABLE

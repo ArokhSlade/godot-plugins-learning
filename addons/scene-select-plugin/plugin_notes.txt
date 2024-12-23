@@ -97,6 +97,11 @@ idea 4:
    will be instantiated without replacing the old one.
  => i declare this attempt to have been proven as not viable for my intended purpose.
 	it's okay.
+ - tried another approach (variation):
+  - stored the node_path and tried to get to the node reference that way.
+  - but: Node not found: "" (relative to "/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Camera2D").
+
+
 ICED: 
 - bug: deleting/changing the currently selected item from global list does not cause update in property
 -> iced because not using global list anymore

@@ -11,10 +11,11 @@ var scene_instance : Node # for Editor respresentation
 var updating = false #NOTE(ArokhSlade,2024 12 09) following godot docs guidance here, does not make sense to me
 
 func _init(scene_select : SceneSelect4, object : Object): 
-	print_rich("[color=yellow]init property[/color]")	
-	if scene_select.owner == null:
-		scene_select.set("owner",object)
-	current_value = scene_select	
+	print_rich("[color=yellow]init property[/color]")
+	
+	scene_select.owner_path = object.get_path()
+	#scene_select.owner = object
+	current_value = scene_select
 	print("edited object: ", get_edited_object())
 	scene_list = current_value.scene_list
 	print(current_value.print_me())
